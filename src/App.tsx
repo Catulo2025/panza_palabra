@@ -841,7 +841,7 @@ Reglas:
 - Verificá antes de entregar el JSON que las 27 letras estén presentes para cada jugador y que cada respuesta sea compatible con su letra.`;
 
 function Header({ compact = false }: { compact?: boolean }) {
-  const logoUrl = `${import.meta.env.BASE_URL}assets/panza-palabra.png`;
+  const logoUrl = "/panza_palabra/assets/panza-palabra.png";
 
   return (
     <header className={compact ? "header compact" : "header"}>
