@@ -845,9 +845,13 @@ function Header({ compact = false }: { compact?: boolean }) {
 
   return (
     <header className={compact ? "header compact" : "header"}>
-      <img className="game-logo" src={logoUrl} alt="Panza Palabra" />
-      {!compact && (
-        <div className="tagline">El clásico juego de palabras y letras</div>
+      {compact ? (
+        <img className="game-logo" src={logoUrl} alt="Panza Palabra" />
+      ) : (
+        <>
+          <img className="header-logo" src={logoUrl} alt="Panza Palabra" />
+          <div className="tagline">El clásico juego de palabras y letras</div>
+        </>
       )}
     </header>
   );

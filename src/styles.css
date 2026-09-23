@@ -63,6 +63,7 @@ button { cursor: pointer; }
 }
 
 .header { text-align: center; margin-bottom: 34px; }
+.header-logo { display: block; width: min(520px, 70vw); max-height: 125px; object-fit: contain; margin: 0 auto 8px; }
 .header.compact { text-align: left; margin-left: 40px; margin-bottom: 0; }
 .brand {
   font-size: clamp(32px, 4.4vw, 62px);
@@ -790,8 +791,8 @@ button { cursor: pointer; }
   margin: 6px auto 18px;
 }
 .participant-choice {
-  min-height: 510px;
-  padding: 16px 13px 13px;
+  min-height: 470px;
+  padding: 13px 12px 11px;
   border: 2px solid #334fd1;
   border-radius: 20px;
   background: linear-gradient(180deg, rgba(8,14,62,.96), rgba(6,8,38,.98));
@@ -895,7 +896,7 @@ button { cursor: pointer; }
   align-items: center;
   justify-content: center;
   flex: 1;
-  min-height: 205px;
+  min-height: 180px;
   padding: 2px 0;
 }
 .mini-rosco {
