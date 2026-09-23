@@ -841,15 +841,13 @@ Reglas:
 - Verificá antes de entregar el JSON que las 27 letras estén presentes para cada jugador y que cada respuesta sea compatible con su letra.`;
 
 function Header({ compact = false }: { compact?: boolean }) {
+  const logoUrl = `${import.meta.env.BASE_URL}assets/panza-palabra.png`;
+
   return (
     <header className={compact ? "header compact" : "header"}>
-      {compact ? (
-        <img className="game-logo" src="/assets/panza-palabra.png" alt="Panza Palabra" />
-      ) : (
-        <>
-          <div className="brand">PASAPALABRA <span>PRO</span></div>
-          <div className="tagline">El clásico juego de palabras y letras</div>
-        </>
+      <img className="game-logo" src={logoUrl} alt="Panza Palabra" />
+      {!compact && (
+        <div className="tagline">El clásico juego de palabras y letras</div>
       )}
     </header>
   );
