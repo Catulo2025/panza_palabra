@@ -1,0 +1,3357 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap");
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #f8fbff;
+  background: #05072a;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0, 115, 255, .25), transparent 35%),
+    radial-gradient(circle at 80% 55%, rgba(117, 0, 255, .22), transparent 30%),
+    linear-gradient(135deg, #030520, #0a0d3f 55%, #070326);
+}
+
+button, input { font: inherit; }
+
+button { cursor: pointer; }
+
+.app {
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .7;
+  background-image:
+    radial-gradient(circle at 7% 10%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 15% 70%, #9d7cff 0 1px, transparent 2px),
+    radial-gradient(circle at 31% 18%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 54% 9%, #5fdcff 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 22%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 90% 12%, #a47cff 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 82%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 41% 91%, #8067ff 0 1px, transparent 2px);
+}
+
+.setup, .game {
+  width: min(1500px, 100%);
+  margin: auto;
+  height: 100%;
+  min-height: 0;
+  padding: 12px 24px 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.header { text-align: center; margin-bottom: 34px; }
+.header.compact { text-align: left; margin-left: 40px; margin-bottom: 0; }
+.brand {
+  font-size: clamp(32px, 4.4vw, 62px);
+  line-height: .95;
+  font-weight: 900;
+  letter-spacing: -4px;
+  color: #f5f7ff;
+  text-shadow: 0 6px 0 #777, 0 12px 25px #000;
+}
+.brand span {
+  color: #10d8ff;
+  text-shadow: 0 0 24px rgba(0, 200, 255, .7);
+}
+.tagline { font-size: 20px; margin-top: 10px; }
+
+.decor {
+  position: absolute;
+  font-weight: 900;
+  color: #4e27d9;
+  border: 3px solid #4e27d9;
+  border-radius: 14px;
+  padding: 8px 14px;
+  transform: rotate(-15deg);
+  opacity: .7;
+}
+.decor-a { left: 2%; top: 12%; }
+.decor-b { left: 8%; top: 7%; transform: rotate(-10deg); }
+.decor-c { left: 5%; top: 18%; transform: rotate(-22deg); }
+.bulb { position: absolute; right: 5%; top: 6%; color: #a54cff; filter: drop-shadow(0 0 15px #8b3cff); }
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1320px;
+  margin: 22px auto 16px;
+}
+
+.player-card {
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 16px 12px 12px;
+  background: rgba(4, 12, 52, .7);
+  box-shadow: 0 0 25px rgba(0, 180, 255, .08), inset 0 0 25px rgba(255,255,255,.025);
+  text-align: center;
+}
+.player-card.blue { border-color: #00cfff; }
+.player-card.pink { border-color: #ff1db9; }
+.player-card.gold { border-color: #ffbd22; }
+.player-card.green { border-color: #00ef76; }
+
+.avatar-wrap { width: 145px; height: 145px; margin: 0 auto 16px; position: relative; }
+.avatar-placeholder, .avatar-image {
+  width: 112px; height: 112px; border-radius: 50%; object-fit: cover;
+}
+.avatar-placeholder {
+  display: grid; place-items: center;
+  background: radial-gradient(circle, #b8d8ff 0 45%, #2579db 46% 100%);
+  color: white; font-size: 54px; font-weight: 900;
+}
+.player-card.pink .avatar-placeholder { background: radial-gradient(circle, #ffb4da 0 45%, #ec2a94 46% 100%); }
+.player-card.gold .avatar-placeholder { background: radial-gradient(circle, #ffe6a0 0 45%, #d08b00 46% 100%); }
+.player-card.green .avatar-placeholder { background: radial-gradient(circle, #c8ffcd 0 45%, #15a64d 46% 100%); }
+.player-number {
+  position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  width: 42px; height: 42px; border-radius: 50%;
+  display: grid; place-items: center; background: #1599ff; font-size: 26px; font-weight: 900;
+}
+.pink .player-number { background: #ff2aa8; }
+.gold .player-number { background: #ff9e10; }
+.green .player-number { background: #11cf63; }
+
+.name-input {
+  width: 100%;
+  background: rgba(0,0,0,.2);
+  border: 1px solid #7f88aa;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  outline: none;
+}
+.name-input:focus { border-color: #10d8ff; }
+
+.photo-button {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #4388ff;
+  border-radius: 12px;
+  padding: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.photo-button input { display: none; }
+
+.setup-controls { max-width: 760px; margin: auto; text-align: center; }
+.time-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 22px;
+  border: 2px solid #4656e7;
+  border-radius: 18px;
+  background: rgba(10, 13, 65, .8);
+}
+.number-input {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #4e6ce9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.number-input input {
+  width: 110px; border: 0; background: transparent; color: white;
+  font-size: 25px; font-weight: 700; text-align: center; outline: none;
+}
+.number-input button {
+  display: block; width: 42px; border: 0; color: white; background: #10245e;
+}
+.number-input svg { width: 17px; }
+
+.start-button {
+  width: 90%; margin: 28px auto 0; padding: 18px;
+  border: 0; border-radius: 40px;
+  background: linear-gradient(90deg, #ff21dc, #6d26ff, #09bdfd);
+  color: white; font-size: 25px; font-weight: 900;
+  box-shadow: 0 0 30px rgba(198, 34, 255, .5);
+}
+.start-button:hover { transform: translateY(-1px); }
+
+.reference-button, .small-action {
+  margin-top: 12px; padding: 9px 15px; border-radius: 10px;
+  background: rgba(0,0,0,.25); color: #c7d6ff; border: 1px solid #4c5ad4;
+}
+.reference-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 15px; }
+.reference-strip img { width: 100%; border-radius: 14px; border: 1px solid #454dd3; }
+
+
+.game {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 10px 18px;
+}
+.game .header { grid-column: 1 / -1; }
+.host-panel {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
+  border: 2px solid #c529ff;
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(6, 8, 48, .85);
+  align-self: start;
+}
+.panel-title { color: #19dfff; font-weight: 900; padding-bottom: 12px; border-bottom: 1px solid #cc32ff; }
+.mic-button {
+  width: 100%; border: 0; border-radius: 12px; padding: 13px;
+  margin: 16px 0; color: white; font-weight: 900;
+}
+.mic-button.on { background: #0ae83b; box-shadow: 0 0 15px #00e737; }
+.mic-button.off { background: #9c1b31; }
+.check-row { display: flex; justify-content: space-between; padding: 10px 0; color: #16dfff; }
+.check-row input { width: 20px; height: 20px; accent-color: #198cff; }
+.small-action { width: 100%; display: flex; justify-content: center; gap: 8px; align-items: center; }
+
+.game-main { grid-column: 2; grid-row: 2; min-width: 0; position: relative; }
+.rosco {
+  width: min(470px, 43vw, 62vh);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 24, 93, .2), transparent 55%);
+}
+.rosco::before {
+  content: ""; position: absolute; inset: 7%;
+  border-radius: 50%; border: 3px solid rgba(24, 132, 255, .45);
+  box-shadow: 0 0 35px rgba(26, 94, 255, .5);
+}
+.rosco-letter {
+  position: absolute; width: 54px; height: 54px; transform: translate(-50%, -50%);
+  border-radius: 50%; display: grid; place-items: center;
+  background: #0a39ad; border: 3px solid #37d9ff;
+  font-size: 20px; font-weight: 900; box-shadow: 0 0 14px #0e82ff;
+}
+.rosco-letter.active { background: #ff19d4; border-color: #fff; transform: translate(-50%, -50%) scale(1.2); }
+.rosco-letter.correct { background: #0ccf59; border-color: #a8ffcb; }
+.rosco-letter.wrong { background: #e51f44; border-color: #ffb0bf; }
+.rosco-letter.passed {
+  background: #f59e0b;
+  border-color: #ffd36a;
+  color: #fff;
+  box-shadow: 0 0 24px rgba(245, 158, 11, .95);
+}
+.rosco-center {
+  position: absolute; inset: 31%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+}
+.rosco-center strong { font-size: clamp(40px, 5vw, 72px); }
+.rosco-center span { font-size: 12px; color: #77eaff; }
+.current-label { margin-top: 10px; color: #fff; font-weight: 900; font-size: 24px; }
+
+.question-card {
+  max-width: 800px; margin: -30px auto 0;
+  padding: 11px; border: 2px solid #445ee8; border-radius: 18px;
+  background: rgba(4, 8, 42, .9);
+}
+.turn-label { color: #1be4ff; font-weight: 900; font-size: 14px; }
+.question { margin: 12px 0 18px; font-size: 20px; line-height: 1.45; }
+.question span { color: #ff5bda; font-weight: 900; margin-right: 7px; }
+.answer-row { display: grid; grid-template-columns: 1fr auto auto; gap: 9px; }
+.answer-row input {
+  min-width: 0; padding: 14px; border-radius: 10px; border: 1px solid #6874a8;
+  background: #070b2d; color: white; outline: none;
+}
+.answer-row button {
+  padding: 0 16px; border: 0; border-radius: 10px; color: white; font-weight: 900;
+  background: linear-gradient(90deg, #00a7ff, #673eff);
+}
+.answer-row button:last-child { background: #8220b9; }
+
+.score-grid {
+  grid-column: 1 / -1; grid-row: 3;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+}
+.score-card {
+  border: 2px solid; border-radius: 18px; padding: 15px;
+  color: white; background: rgba(3, 8, 45, .82); text-align: center;
+}
+.score-card.c1 { border-color: #00cfff; }
+.score-card.c2 { border-color: #ff22bb; }
+.score-card.c3 { border-color: #ffb51b; }
+.score-card.c4 { border-color: #00ed76; }
+.score-card.selected { box-shadow: 0 0 25px rgba(100,100,255,.55); }
+.score-avatar { width: 74px; height: 74px; margin: auto; border-radius: 50%; overflow: hidden; background: #234aab; display: grid; place-items: center; font-size: 28px; font-weight: 900; }
+.score-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.score-card strong { display: block; margin: 8px 0; }
+.score-values { display: flex; justify-content: center; gap: 10px; }
+.score-values span { width: 72px; height: 72px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; background: #d71948; }
+.score-values span:last-child { background: #16df4d; color: #001900; }
+.score-values b { font-size: 24px; }
+.score-values small { font-size: 9px; font-weight: 900; }
+
+.game-actions { grid-column: 1 / -1; grid-row: 4; text-align: center; }
+.game-actions button { background: transparent; border: 1px solid #5262c7; color: #b9c6ff; border-radius: 10px; padding: 8px 14px; display: inline-flex; gap: 8px; align-items: center; }
+
+
+@media (max-width: 1050px) {
+  .player-grid { grid-template-columns: repeat(2, 1fr); }
+  .game { grid-template-columns: 1fr; }
+  .host-panel, .game-main, .game .header, .score-grid, .game-actions { grid-column: 1; }
+  .host-panel { grid-row: 2; }
+  .game-main { grid-row: 3; }
+  .score-grid { grid-row: 4; }
+  .game-actions { grid-row: 5; }
+}
+
+@media (max-width: 650px) {
+  .setup, .game { padding: 10px 12px 12px; }
+  .player-grid { grid-template-columns: 1fr; margin-top: 35px; }
+  .time-control { flex-wrap: wrap; }
+  .start-button { width: 100%; }
+  .reference-strip { grid-template-columns: 1fr; }
+  .slogan, .decor, .bulb { display: none; }
+  .answer-row { grid-template-columns: 1fr; }
+  .answer-row button { padding: 13px; }
+  .score-grid { grid-template-columns: repeat(2, 1fr); }
+  .rosco { width: min(92vw, 520px); }
+  .rosco-letter { width: 38px; height: 38px; font-size: 14px; }
+  .brand { letter-spacing: -2px; }
+}
+.mic-button.listening {
+  background: #ff176f;
+  box-shadow: 0 0 22px rgba(255, 23, 111, .75);
+  animation: micPulse 1s infinite alternate;
+}
+.voice-message {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid #3c68c8;
+  border-radius: 8px;
+  color: #b9eaff;
+  background: rgba(0, 80, 160, .18);
+  font-size: 11px;
+  line-height: 1.3;
+}
+@keyframes micPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.025); }
+}
+
+@media (max-width: 1100px) and (min-width: 651px) {
+  .setup, .game { padding: 12px 16px 16px; }
+  .header.compact { margin-left: 0; }
+  .header.compact .brand { font-size: 42px; }
+  .header.compact .tagline { font-size: 14px; }
+  .game {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 7px 12px;
+  }
+  .host-panel { padding: 11px; }
+  .panel-title { font-size: 12px; }
+  .mic-button { padding: 9px; margin: 9px 0; font-size: 11px; }
+  .check-row { padding: 6px 0; font-size: 11px; }
+  .game-main { min-height: 0; }
+  .rosco { width: min(410px, 48vw); }
+  .rosco-letter { width: 38px; height: 38px; font-size: 15px; }
+  .question-card { max-width: 620px; margin-top: -3px; padding: 11px; }
+  .question { margin: 7px 0 10px; font-size: 14px; }
+  .turn-label { font-size: 10px; }
+  .answer-row input, .answer-row button { padding: 9px; font-size: 11px; }
+  .score-grid { gap: 7px; }
+  .score-card { padding: 8px; }
+  .score-avatar { width: 48px; height: 48px; font-size: 18px; }
+  .score-card strong { font-size: 12px; margin: 4px 0; }
+  .score-values { gap: 5px; }
+  .score-values span { width: 46px; height: 46px; }
+  .score-values b { font-size: 16px; }
+  .score-values small { font-size: 7px; }
+  .game-actions { margin-top: -3px; }
+}
+
+/* Ajuste de pantalla completa: sin scroll en la pantalla de juego. */
+@media (min-width: 651px) {
+  .game .header.compact {
+    margin-top: 0;
+  }
+
+  .game .score-grid {
+    align-self: end;
+  }
+
+  .game-actions {
+    padding-bottom: 2px;
+  }
+}
+
+@media (min-width: 651px) and (max-height: 820px) {
+  .setup, .game {
+    padding-top: 7px;
+    padding-bottom: 8px;
+  }
+  .header.compact .brand {
+    font-size: 34px;
+  }
+  .header.compact .tagline {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .host-panel {
+    padding: 8px;
+  }
+  .rosco {
+    width: min(430px, 44vw, 56vh);
+  }
+  .question-card {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 651px) and (max-width: 1100px) {
+  .game {
+    grid-template-columns: 185px minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    gap: 5px 10px;
+  }
+  .host-panel {
+    padding: 9px;
+  }
+  .game .header.compact {
+    margin-left: 0;
+  }
+  .game .header.compact .brand {
+    font-size: 38px;
+  }
+  .game .header.compact .tagline {
+    font-size: 13px;
+  }
+  .rosco {
+    width: min(430px, 48vw, 58vh);
+  }
+  .rosco-letter {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  .rosco-center strong {
+    font-size: 46px;
+  }
+  .current-label {
+    font-size: 19px;
+    margin-top: 5px;
+  }
+  .question-card {
+    max-width: 690px;
+    padding: 9px;
+  }
+  .question {
+    font-size: 13px;
+    margin: 5px 0 7px;
+  }
+  .answer-row input,
+  .answer-row button {
+    padding: 8px;
+    font-size: 11px;
+  }
+  .score-card {
+    padding: 6px;
+  }
+  .score-avatar {
+    width: 45px;
+    height: 45px;
+  }
+  .score-values span {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.pause-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 9px;
+  padding: 8px 11px;
+  border: 1px solid #f59e0b;
+  border-radius: 9px;
+  background: rgba(245, 158, 11, .12);
+  color: #ffd36a;
+  font-size: 12px;
+}
+.pause-banner strong {
+  white-space: nowrap;
+}
+.rosco-center.paused .current-label {
+  color: #ffbd35;
+}
+.pause-center {
+  margin-top: 5px;
+  padding: 4px 9px;
+  border: 1px solid #f59e0b;
+  border-radius: 999px;
+  color: #ffd36a;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .4px;
+}
+.resume-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 9px;
+  border: 1px solid #f59e0b;
+  border-radius: 9px;
+  background: rgba(245, 158, 11, .15);
+  color: #ffd36a;
+  font-weight: 900;
+}
+.resume-button:hover {
+  background: rgba(245, 158, 11, .28);
+}
+
+.wrong-feedback {
+  position: absolute;
+  left: calc(50% + 270px);
+  top: 125px;
+  width: 250px;
+  padding: 16px;
+  border: 2px solid #ff3657;
+  border-radius: 15px;
+  background: linear-gradient(180deg, rgba(55, 5, 28, .98), rgba(18, 7, 37, .98));
+  box-shadow: 0 0 25px rgba(255, 31, 75, .38);
+  z-index: 8;
+  text-align: center;
+}
+.wrong-feedback-title {
+  color: #ff5570;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: .4px;
+}
+.wrong-feedback-letter {
+  margin-top: 7px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 14px;
+}
+.wrong-feedback-label {
+  margin-top: 13px;
+  color: #c8cbed;
+  font-size: 12px;
+}
+.wrong-feedback-answer {
+  margin-top: 5px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(255,255,255,.25);
+}
+.wrong-feedback-note {
+  margin-top: 11px;
+  color: #ffbd35;
+  font-size: 11px;
+  font-weight: 800;
+}
+.wrong-feedback button {
+  width: 100%;
+  margin-top: 13px;
+  padding: 10px;
+  border: 0;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #ff3159, #9b1fd1);
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  .wrong-feedback {
+    left: calc(50% + 205px);
+    width: 220px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .wrong-feedback {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: min(520px, 100%);
+    margin: -5px auto 12px;
+  }
+}
+
+.question-bank-control {
+  margin: 18px auto 0;
+  max-width: 900px;
+  padding: 14px 18px;
+  border: 1px solid #4656e7;
+  border-radius: 16px;
+  background: rgba(8, 12, 58, .72);
+}
+.question-bank-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7de9ff;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.question-bank-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.json-button, .ai-help-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 9px 13px;
+  border-radius: 10px;
+  border: 1px solid #4c78e9;
+  background: rgba(18, 42, 105, .8);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 12px;
+}
+.json-button input { display: none; }
+.ai-help-button {
+  border-color: #9d45e9;
+  background: rgba(99, 25, 145, .35);
+}
+.question-bank-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 9px;
+  color: #8fffb5;
+  font-size: 12px;
+}
+.question-bank-status.error {
+  color: #ff8095;
+  text-align: left;
+  justify-content: flex-start;
+  line-height: 1.35;
+}
+.question-category {
+  display: inline-block;
+  margin-bottom: 4px;
+  padding: 3px 8px;
+  border: 1px solid #5368d6;
+  border-radius: 999px;
+  color: #8ddfff;
+  background: rgba(35, 72, 160, .2);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(1, 3, 20, .78);
+  backdrop-filter: blur(6px);
+}
+.ai-modal {
+  position: relative;
+  width: min(900px, 96vw);
+  max-height: 90vh;
+  padding: 22px;
+  border: 2px solid #a83dff;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #10164d, #080a2d);
+  box-shadow: 0 0 45px rgba(139, 48, 255, .45);
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #5968b9;
+  border-radius: 50%;
+  background: rgba(0,0,0,.25);
+  color: #fff;
+}
+.ai-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #df8cff;
+  font-size: 18px;
+  font-weight: 900;
+  padding-right: 45px;
+}
+.ai-modal p {
+  color: #cbd5ff;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.ai-modal textarea {
+  width: 100%;
+  height: min(52vh, 480px);
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid #5666c9;
+  border-radius: 10px;
+  background: #050820;
+  color: #e8edff;
+  font: 12px/1.45 Consolas, "Courier New", monospace;
+  outline: none;
+}
+.ai-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 12px;
+}
+.copy-prompt-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff21dc, #633eff);
+  color: #fff;
+  font-weight: 900;
+}
+@media (max-width: 650px) {
+  .question-bank-control { padding: 12px; }
+  .question-bank-actions > * { width: 100%; }
+  .ai-modal { padding: 16px; }
+}
+
+/* ===== Selección de participante + vista previa de cada rosco ===== */
+.player-select-screen {
+  min-height: 100%;
+  height: 100%;
+  padding: 16px 28px 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.player-select-title {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8eefff;
+  font-size: 25px;
+  font-weight: 950;
+  letter-spacing: .5px;
+  text-shadow: 0 0 18px rgba(0,210,255,.45);
+}
+.player-select-subtitle {
+  margin: 7px 0 16px;
+  color: #bdc8f5;
+  font-size: 14px;
+  text-align: center;
+}
+.player-select-grid {
+  width: min(1280px, 96vw);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 6px auto 18px;
+}
+.participant-choice {
+  min-height: 510px;
+  padding: 16px 13px 13px;
+  border: 2px solid #334fd1;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(8,14,62,.96), rgba(6,8,38,.98));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  text-align: center;
+  overflow: hidden;
+}
+.participant-choice:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 0 28px rgba(41,150,255,.35);
+  border-color: #6cecff;
+}
+.participant-choice.c2:hover { border-color: #ff32a8; box-shadow: 0 0 28px rgba(255,32,168,.32); }
+.participant-choice.c3:hover { border-color: #ffd12f; box-shadow: 0 0 28px rgba(255,209,47,.28); }
+.participant-choice.c4:hover { border-color: #21ed83; box-shadow: 0 0 28px rgba(33,237,131,.25); }
+.choice-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-align: left;
+  min-height: 76px;
+}
+.choice-avatar {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #12348f;
+  border: 3px solid #38bfff;
+  box-shadow: 0 0 18px rgba(0,184,255,.45);
+}
+.c2 .choice-avatar { border-color: #ff2ba7; background: #74104f; }
+.c3 .choice-avatar { border-color: #ffd22e; background: #694f0b; }
+.c4 .choice-avatar { border-color: #21ed83; background: #075d39; }
+.choice-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.choice-avatar span { font-size: 30px; font-weight: 950; }
+.choice-player-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.participant-choice strong {
+  font-size: 20px;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.choice-detail {
+  color: #9fb2ee;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .45px;
+}
+.choice-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.choice-stat {
+  min-height: 54px;
+  padding: 6px 3px;
+  border: 1px solid #344b9c;
+  border-radius: 10px;
+  background: rgba(0,0,0,.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.choice-stat b { font-size: 17px; }
+.choice-stat small {
+  margin-top: 5px;
+  font-size: 8px;
+  font-weight: 950;
+  letter-spacing: .35px;
+  color: #91a6e8;
+}
+.choice-stat.time b { color: #78e8ff; }
+.choice-stat.correct { border-color: rgba(24,223,99,.5); }
+.choice-stat.correct b { color: #54f98a; }
+.choice-stat.correct small { color: #7ff9a6; }
+.choice-stat.wrong { border-color: rgba(255,55,92,.5); }
+.choice-stat.wrong b { color: #ff5c78; }
+.choice-stat.wrong small { color: #ff9aae; }
+.mini-rosco-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 205px;
+  padding: 2px 0;
+}
+.mini-rosco {
+  width: min(205px, 100%);
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,31,112,.24), transparent 58%);
+}
+.mini-rosco::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 2px solid rgba(44,137,255,.35);
+  box-shadow: 0 0 22px rgba(26,94,255,.35);
+}
+.mini-rosco-letter {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #0a39ad;
+  border: 2px solid #37d9ff;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 950;
+  box-shadow: 0 0 8px rgba(14,130,255,.6);
+  transition: transform .15s ease, background .15s ease;
+}
+.mini-rosco-letter.correct {
+  background: #0ccf59;
+  border-color: #a8ffcb;
+  box-shadow: 0 0 9px rgba(12,207,89,.55);
+}
+.mini-rosco-letter.wrong {
+  background: #e51f44;
+  border-color: #ffb0bf;
+  box-shadow: 0 0 9px rgba(229,31,68,.55);
+}
+.mini-rosco-letter.passed {
+  background: #f59e0b;
+  border-color: #ffd36a;
+  box-shadow: 0 0 10px rgba(245,158,11,.7);
+}
+.mini-rosco-letter.current {
+  background: #ff19d4;
+  border-color: #fff;
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 14px rgba(255,25,212,.85);
+  z-index: 2;
+}
+.mini-rosco-center {
+  position: absolute;
+  inset: 31%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(3,7,43,.76);
+  border: 1px solid rgba(91,128,255,.38);
+}
+.mini-rosco-center b {
+  font-size: 17px;
+  color: #f5f8ff;
+}
+.mini-rosco-center small {
+  margin-top: 3px;
+  font-size: 6.5px;
+  font-weight: 950;
+  color: #7fc8ff;
+  letter-spacing: .4px;
+}
+.choice-play {
+  width: 100%;
+  padding: 10px 8px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #087cff, #633fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 950;
+}
+.c2 .choice-play { background: linear-gradient(90deg, #ff1886, #9b39ff); }
+.c3 .choice-play { background: linear-gradient(90deg, #d99a00, #ffca28); color: #151000; }
+.c4 .choice-play { background: linear-gradient(90deg, #08b765, #00d9a2); color: #00170e; }
+.back-setup-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid #5262c7;
+  border-radius: 10px;
+  background: rgba(8,13,54,.65);
+  color: #b9c6ff;
+  cursor: pointer;
+}
+.active-player-badge {
+  margin: 9px 0 2px;
+  padding: 6px 8px;
+  border: 1px solid #4b65d7;
+  border-radius: 8px;
+  color: #aeeaff;
+  background: rgba(23,57,135,.25);
+  font-size: 10px;
+  font-weight: 900;
+  text-align: center;
+}
+.score-other {
+  margin-top: 10px;
+  color: #6675b4;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+.game-actions { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.game-actions button { cursor: pointer; }
+
+@media (max-width: 1100px) {
+  .player-select-screen { overflow: auto; height: auto; min-height: 100%; }
+  .player-select-grid { grid-template-columns: repeat(2, 1fr); }
+  .participant-choice { min-height: 480px; }
+}
+@media (max-width: 650px) {
+  .player-select-grid { grid-template-columns: 1fr; width: min(430px, 94vw); }
+  .participant-choice { min-height: 455px; }
+  .mini-rosco { width: 190px; }
+}
+
+
+/* V1.4 — monitor visible del reconocimiento de voz */
+.recognized-label {
+  margin-top: 10px;
+  color: #7fa9ff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .6px;
+}
+.recognized-text {
+  min-height: 58px;
+  margin-top: 5px;
+  padding: 10px 11px;
+  border: 1px solid #2852a5;
+  border-radius: 10px;
+  background: rgba(4, 12, 48, .9);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+}
+.recognized-text.empty { color: #6e83b7; font-style: italic; }
+.recognized-text.has-text { border-color: #16dfff; box-shadow: inset 0 0 12px rgba(22,223,255,.08); }
+.voice-status {
+  margin-top: 7px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(25, 61, 128, .35);
+  color: #9eb9ff;
+  font-size: 9px;
+}
+
+/* ===== V1.3 — Pantalla de juego compacta para 100% de zoom =====
+   Optimizada para escritorios 1280x720, 1366x768, 1600x900 y similares. */
+@media (min-width: 1101px) {
+  .game {
+    grid-template-columns: 250px minmax(0, 1fr);
+    grid-template-rows: 82px minmax(0, 1fr) 104px 32px;
+    gap: 7px 16px;
+    padding: 8px 18px 8px;
+  }
+
+  .game .header.compact {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .game .header.compact .brand {
+    font-size: clamp(34px, 3.6vw, 50px);
+    letter-spacing: -3px;
+  }
+
+  .game .header.compact .tagline {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .host-panel {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .recognized-text {
+    min-height: 62px;
+    font-size: 11px;
+    padding: 8px 9px;
+  }
+
+  .recognized-label {
+    margin-top: 8px;
+    font-size: 8px;
+  }
+
+  .voice-status {
+    font-size: 8px;
+  }
+
+  .panel-title {
+    font-size: 13px;
+    padding-bottom: 8px;
+  }
+
+  .active-player-badge {
+    margin: 7px 0 1px;
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .mic-button {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+
+  .check-row {
+    padding: 7px 0;
+    font-size: 12px;
+  }
+
+  .check-row input {
+    width: 17px;
+    height: 17px;
+  }
+
+  .voice-message {
+    margin-top: 7px;
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .game-main {
+    grid-row: 2;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .rosco {
+    flex: 0 0 auto;
+    width: min(400px, 40vh, 40vw);
+    margin: 0 auto;
+  }
+
+  .rosco-letter {
+    width: 47px;
+    height: 47px;
+    font-size: 18px;
+    border-width: 2px;
+  }
+
+  .rosco-letter.active {
+    transform: translate(-50%, -50%) scale(1.13);
+  }
+
+  .rosco-center strong {
+    font-size: clamp(38px, 4.3vw, 58px);
+  }
+
+  .current-label {
+    margin-top: 6px;
+    font-size: 20px;
+  }
+
+  .question-card {
+    width: min(850px, 94%);
+    max-width: none;
+    margin: -2px auto 0;
+    padding: 9px 12px;
+    border-radius: 15px;
+  }
+
+  .turn-label {
+    font-size: 11px;
+  }
+
+  .question-category {
+    font-size: 9px;
+  }
+
+  .question {
+    margin: 6px 0 9px;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .answer-row {
+    gap: 7px;
+  }
+
+  .answer-row input,
+  .answer-row button {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .score-grid {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    gap: 8px;
+    min-height: 0;
+  }
+
+  .score-card {
+    padding: 7px 10px;
+    border-radius: 13px;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+  }
+
+  .score-avatar {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .score-card strong {
+    margin: 0 0 3px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .score-values {
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .score-values span {
+    width: 43px;
+    height: 43px;
+  }
+
+  .score-values b {
+    font-size: 15px;
+  }
+
+  .score-values small {
+    font-size: 7px;
+  }
+
+  .score-other {
+    margin: 0;
+    font-size: 8px;
+  }
+
+  .game-actions {
+    grid-row: 4;
+    padding-bottom: 0;
+  }
+
+  .game-actions button {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+
+/* En monitores bajos reducimos un poco más sin cambiar la distribución. */
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game {
+    grid-template-rows: 66px minmax(0, 1fr) 82px 28px;
+    gap: 4px 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .game .header.compact .brand {
+    font-size: 34px;
+  }
+
+  .game .header.compact .tagline {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+
+  .host-panel {
+    padding: 8px;
+  }
+
+  .mic-button {
+    margin: 7px 0;
+    padding: 8px;
+  }
+
+  .check-row {
+    padding: 5px 0;
+    font-size: 10px;
+  }
+
+  .rosco {
+    width: min(350px, 40vh, 40vw);
+  }
+
+  .rosco-letter {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .question-card {
+    padding: 7px 10px;
+  }
+
+  .question {
+    margin: 4px 0 6px;
+    font-size: 13px;
+  }
+
+  .answer-row input,
+  .answer-row button {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .score-card {
+    padding: 4px 7px;
+  }
+
+  .score-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .score-values span {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ===== V1.5 — Layout de juego optimizado =====
+   Encabezado centrado, panel de resultado alineado con Host,
+   rosco maximizado y estadísticas completas por participante. */
+@media (min-width: 1101px) {
+  .game {
+    grid-template-columns: 250px minmax(0, 1fr) 250px;
+    grid-template-rows: 66px minmax(0, 1fr) 82px 28px;
+    column-gap: 14px;
+    row-gap: 4px;
+    padding: 5px 12px 5px;
+  }
+
+  .game .header.compact {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .game .header.compact .brand {
+    font-size: clamp(34px, 3.2vw, 50px);
+    letter-spacing: -3px;
+  }
+
+  .game .header.compact .tagline {
+    font-size: 12px;
+    margin-top: 1px;
+  }
+
+  .host-panel {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .wrong-feedback {
+    position: static;
+    grid-column: 3;
+    grid-row: 2;
+    align-self: start;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .game-main {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .rosco {
+    flex: 0 0 auto;
+    width: min(500px, 52vh, 100%);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .rosco-letter {
+    width: 54px;
+    height: 54px;
+    font-size: 19px;
+    border-width: 2px;
+  }
+
+  .rosco-letter.active {
+    transform: translate(-50%, -50%) scale(1.13);
+  }
+
+  .rosco-center strong {
+    font-size: clamp(42px, 4.4vw, 64px);
+    line-height: .95;
+    text-align: center;
+  }
+
+  .current-label {
+    margin-top: 6px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .question-card {
+    width: min(900px, 100%);
+    max-width: none;
+    margin: 2px auto 0;
+    padding: 8px 11px;
+    box-sizing: border-box;
+  }
+
+  .question {
+    margin: 5px 0 7px;
+    font-size: 14px;
+    line-height: 1.28;
+  }
+
+  .answer-row {
+    gap: 6px;
+  }
+
+  .answer-row input,
+  .answer-row button {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .score-grid {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    gap: 7px;
+    min-height: 0;
+  }
+
+  .score-card {
+    min-width: 0;
+    padding: 5px 8px;
+    border-radius: 13px;
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 7px;
+    text-align: left;
+  }
+
+  .score-avatar {
+    width: 42px;
+    height: 42px;
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .score-card strong {
+    margin: 0 0 3px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .score-values {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .score-values span {
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    justify-self: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+
+  .score-values .stat-time { background: #d71948; color: #fff; }
+  .score-values .stat-correct { background: #16df4d; color: #001900; }
+  .score-values .stat-wrong { background: #ef6c35; color: #fff; }
+
+  .score-values b {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .score-values small {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 6px;
+    line-height: 1.1;
+    margin-top: 2px;
+  }
+
+  .game-actions {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .game-actions button {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+}
+
+/* En pantallas bajas, el rosco crece hasta el máximo que permite la pregunta. */
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game {
+    grid-template-rows: 58px minmax(0, 1fr) 78px 26px;
+  }
+
+  .game .header.compact .brand { font-size: 32px; }
+  .game .header.compact .tagline { font-size: 10px; }
+
+  .rosco {
+    width: min(460px, 50vh, 100%);
+  }
+
+  .rosco-letter {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .question-card {
+    padding: 6px 9px;
+  }
+
+  .question {
+    margin: 3px 0 5px;
+    font-size: 13px;
+  }
+
+  .score-card { padding: 4px 7px; }
+  .score-avatar { width: 38px; height: 38px; }
+  .score-values span { width: 37px; height: 37px; }
+  .score-values b { font-size: 13px; }
+  .score-values small { font-size: 5.5px; }
+}
+
+
+/* ===== V1.6 — Rediseño de mesa de juego =====
+   Dos participantes debajo de cada panel lateral, panel de respuesta fijo
+   y pregunta protagonista en el centro. */
+@media (min-width: 1101px) {
+  .game {
+    grid-template-columns: 250px minmax(0, 1fr) 250px;
+    grid-template-rows: 66px minmax(0, 1fr) 116px 28px;
+    column-gap: 14px;
+    row-gap: 5px;
+    padding: 5px 12px 5px;
+  }
+
+  .game .header.compact {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .host-panel,
+  .wrong-feedback {
+    grid-row: 2;
+    align-self: start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .host-panel { grid-column: 1; }
+  .wrong-feedback {
+    grid-column: 3;
+    position: static;
+    margin: 0;
+  }
+
+  .game-main {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .rosco {
+    width: min(520px, 58vh, 100%);
+    max-width: 520px;
+    margin: 0 auto;
+    flex: 0 0 auto;
+  }
+
+  .rosco-letter {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+  }
+
+  .rosco-center strong {
+    font-size: clamp(48px, 4.6vw, 68px);
+    line-height: .92;
+    text-align: center;
+  }
+
+  .current-label {
+    margin-top: 6px;
+    font-size: 21px;
+  }
+
+  .question-card {
+    width: min(920px, 100%);
+    margin: 0 auto;
+    padding: 11px 14px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
+
+  .question-category {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .question {
+    margin: 3px 0 10px;
+    font-size: clamp(19px, 1.45vw, 25px);
+    line-height: 1.24;
+  }
+
+  .question span { margin-right: 9px; }
+
+  .answer-row {
+    grid-template-columns: 1fr auto;
+    gap: 7px;
+  }
+
+  .answer-row input {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .answer-row button {
+    padding: 9px 14px;
+    font-size: 11px;
+  }
+
+  /* El panel de participantes ocupa solamente debajo de los laterales. */
+  .score-grid {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr) 250px;
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .score-side {
+    min-width: 0;
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .score-side-left { grid-column: 1; }
+  .score-side-right { grid-column: 3; }
+
+  .score-card {
+    min-width: 0;
+    min-height: 0;
+    padding: 5px 7px;
+    border-radius: 13px;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 7px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .score-avatar {
+    width: 34px;
+    height: 34px;
+    grid-row: 1 / span 2;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .score-card strong {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .score-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    min-width: 0;
+    justify-content: stretch;
+  }
+
+  .score-values span {
+    width: 31px;
+    height: 31px;
+    justify-self: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+
+  .score-values b {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  .score-values small {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 4.5px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .wrong-feedback {
+    min-height: 0;
+    padding: 15px;
+  }
+
+  .wrong-feedback.waiting { border-color: #4059bd; }
+  .wrong-feedback.has-correct { border-color: #16df4d; }
+  .wrong-feedback.has-pass { border-color: #ffb51b; }
+
+  .wrong-feedback-spoken {
+    color: #ff6b9e;
+    font-weight: 1000;
+    font-size: 18px;
+    text-align: center;
+    margin: 4px 0 8px;
+    word-break: break-word;
+  }
+
+  .wrong-feedback-placeholder {
+    margin-top: 10px;
+    padding: 12px 8px;
+    border: 1px dashed #31509e;
+    border-radius: 10px;
+    color: #7089c9;
+    font-size: 10px;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .correct-title { color: #16df4d !important; }
+  .pass-title { color: #ffb51b !important; }
+  .waiting-title { color: #62d8ff !important; }
+
+  .game-actions {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game {
+    grid-template-rows: 56px minmax(0, 1fr) 104px 25px;
+    row-gap: 4px;
+  }
+
+  .game .header.compact .brand { font-size: 31px; }
+  .game .header.compact .tagline { font-size: 10px; }
+
+  .host-panel,
+  .wrong-feedback { padding: 9px; }
+
+  .rosco {
+    width: min(470px, 56vh, 100%);
+    max-width: 470px;
+  }
+
+  .rosco-letter {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .rosco-center strong { font-size: 52px; }
+  .current-label { font-size: 18px; }
+
+  .question-card { padding: 8px 11px; }
+  .question { font-size: 17px; margin-bottom: 7px; }
+  .answer-row input, .answer-row button { padding: 7px 9px; font-size: 10px; }
+
+  .score-card { padding: 4px 6px; }
+  .score-avatar { width: 30px; height: 30px; }
+  .score-values span { width: 28px; height: 28px; }
+  .score-values b { font-size: 10px; }
+  .score-values small { font-size: 4px; }
+}
+
+/* Fuera del escritorio grande, la mesa vuelve a una sola columna para no
+   comprimir los controles laterales. */
+@media (max-width: 1100px) {
+  .wrong-feedback {
+    grid-column: 1;
+    grid-row: 4;
+    position: static;
+  }
+  .score-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .score-side { display: contents; }
+  .score-card { min-height: 100px; }
+}
+
+/* ===== V1.7 — Rosco protagonista + foto del participante ===== */
+@media (min-width: 1101px) {
+  .game {
+    grid-template-rows: 66px minmax(0, 1fr) 92px 28px;
+  }
+
+  .game-main {
+    gap: 8px;
+  }
+
+  .rosco {
+    width: min(560px, 60vh, 100%);
+    max-width: 560px;
+  }
+
+  .rosco-letter {
+    width: 58px;
+    height: 58px;
+    font-size: 21px;
+  }
+
+  .rosco-center {
+    inset: 27%;
+    gap: 1px;
+  }
+
+  .rosco-player-photo {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: 0 0 auto;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 4px rgba(21, 173, 255, .8), 0 0 28px rgba(25, 170, 255, .7);
+    background: #17368c;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 900;
+  }
+
+  .rosco-player-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .rosco-center strong {
+    font-size: clamp(44px, 4.1vw, 62px);
+    line-height: .9;
+    margin-top: 4px;
+  }
+
+  .rosco-center span {
+    font-size: 10px;
+  }
+
+  .current-label {
+    margin-top: 3px;
+    font-size: 19px;
+  }
+
+  .score-grid {
+    grid-template-columns: 220px minmax(0, 1fr) 220px;
+    gap: 10px;
+  }
+
+  .score-side {
+    gap: 5px;
+  }
+
+  .score-card {
+    padding: 4px 6px;
+    border-radius: 12px;
+    grid-template-columns: 30px minmax(0, 1fr);
+    column-gap: 6px;
+  }
+
+  .score-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .score-card strong {
+    font-size: 10px;
+  }
+
+  .score-values {
+    gap: 4px;
+  }
+
+  .score-values span {
+    width: 31px;
+    height: 31px;
+  }
+
+  .score-values b {
+    font-size: 10px;
+  }
+
+  .score-values small {
+    font-size: 4px;
+  }
+
+  .question-card {
+    margin-top: 4px;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game {
+    grid-template-rows: 58px minmax(0, 1fr) 78px 26px;
+  }
+
+  .rosco {
+    width: min(500px, 56vh, 100%);
+    max-width: 500px;
+  }
+
+  .rosco-letter {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+  }
+
+  .rosco-player-photo {
+    width: 86px;
+    height: 86px;
+    font-size: 32px;
+  }
+
+  .rosco-center strong {
+    font-size: 46px;
+  }
+
+  .current-label {
+    font-size: 17px;
+  }
+
+  .score-grid {
+    grid-template-columns: 205px minmax(0, 1fr) 205px;
+  }
+}
+
+/* ===== V1.8 — composición 100% + isologo Panza Palabra + foto central ===== */
+@media (min-width: 1101px) {
+  .game {
+    grid-template-columns: 270px minmax(0, 1fr) 270px;
+    grid-template-rows: 100px minmax(0, 1fr) auto 30px;
+    gap: 8px 18px;
+    padding: 6px 12px 8px;
+  }
+
+  .game .header.compact {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .game-logo {
+    display: block;
+    width: min(430px, 32vw);
+    height: auto;
+    max-height: 96px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 7px 16px rgba(0,0,0,.55));
+  }
+
+  .game-side {
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .game-side-left { grid-column: 1; }
+  .game-side-right { grid-column: 3; }
+
+  .host-panel,
+  .wrong-feedback {
+    position: static;
+    width: 100%;
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  .host-panel { padding: 12px; }
+  .wrong-feedback { padding: 15px; }
+
+  .game-side .score-side {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin-top: 12px;
+    min-height: 0;
+  }
+
+  .game-side-right .score-side { margin-top: 12px; }
+
+  .game-side .score-card {
+    min-height: 62px;
+    padding: 5px 8px;
+    border-radius: 13px;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 7px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .game-side .score-avatar {
+    width: 36px;
+    height: 36px;
+    grid-row: 1 / span 2;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .game-side .score-card strong {
+    margin: 0 0 2px;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  .game-side .score-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .game-side .score-values span {
+    width: 32px;
+    height: 32px;
+    justify-self: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .game-side .score-values b {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .game-side .score-values small {
+    width: 100%;
+    text-align: center;
+    font-size: 4px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .game-main {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rosco {
+    width: min(620px, 62vh, 100%);
+    max-width: 620px;
+    flex: 0 0 auto;
+    margin: 0 auto;
+  }
+
+  .rosco-letter {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+  }
+
+  .rosco-letter.active {
+    transform: translate(-50%, -50%) scale(1.14);
+  }
+
+  .rosco-center {
+    inset: 21%;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .rosco-photo-layer {
+    position: absolute;
+    inset: 2%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: #10286f;
+    opacity: .50;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .rosco-photo-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(4,9,44,.05) 35%, rgba(4,9,44,.48) 100%);
+  }
+
+  .rosco-photo-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .rosco-photo-layer span {
+    font-size: 150px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .rosco-center-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    text-shadow: 0 3px 10px rgba(0,0,0,.85);
+  }
+
+  .rosco-center-content strong {
+    font-size: clamp(52px, 5vw, 76px);
+    line-height: .9;
+    color: #fff;
+  }
+
+  .rosco-center-content > span {
+    font-size: 12px;
+    color: #8cecff;
+    font-weight: 700;
+  }
+
+  .rosco-center-content .current-label {
+    margin-top: 7px;
+    font-size: 24px;
+    color: #ffbd35;
+  }
+
+  .rosco-center-content .pause-center {
+    margin-top: 7px;
+    font-size: 11px;
+    background: rgba(4,8,40,.42);
+  }
+
+  .question-card {
+    grid-column: 2;
+    grid-row: 3;
+    width: min(940px, 100%);
+    max-width: none;
+    margin: 0 auto;
+    padding: 11px 14px;
+    border-radius: 16px;
+    align-self: end;
+  }
+
+  .question {
+    margin: 5px 0 10px;
+    font-size: clamp(20px, 1.5vw, 25px);
+    line-height: 1.25;
+  }
+
+  .answer-row input { font-size: 13px; }
+
+  .game-actions {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    align-self: end;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game {
+    grid-template-rows: 76px minmax(0, 1fr) auto 26px;
+    gap: 5px 14px;
+  }
+
+  .game-logo {
+    width: 330px;
+    max-height: 70px;
+  }
+
+  .rosco {
+    width: min(520px, 57vh, 100%);
+  }
+
+  .rosco-letter {
+    width: 52px;
+    height: 52px;
+    font-size: 19px;
+  }
+
+  .rosco-center-content strong { font-size: 52px; }
+  .rosco-center-content .current-label { font-size: 19px; }
+
+  .game-side .score-side { margin-top: 8px; gap: 5px; }
+  .game-side .score-card { min-height: 52px; padding: 4px 6px; }
+  .game-side .score-avatar { width: 30px; height: 30px; }
+  .game-side .score-values span { width: 28px; height: 28px; }
+  .game-side .score-values b { font-size: 9px; }
+  .game-side .score-values small { font-size: 3.5px; }
+
+  .question-card { padding: 8px 11px; }
+  .question { font-size: 17px; margin-bottom: 7px; }
+}
+
+
+/* ===== V1.9 — Foto a pantalla completa dentro del rosco + panel de jugadores ===== */
+@media (min-width: 1101px) {
+  /* La foto ocupa todo el disco del rosco y queda detrás de letras e información. */
+  .rosco {
+    position: relative;
+    overflow: visible;
+  }
+
+  .rosco-photo-layer.rosco-photo-layer-full {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: #10286f;
+    opacity: .50;
+    z-index: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 55px rgba(3, 8, 45, .62);
+  }
+
+  .rosco-photo-layer.rosco-photo-layer-full::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(4,9,44,.04) 30%, rgba(4,9,44,.52) 100%);
+  }
+
+  .rosco-photo-layer.rosco-photo-layer-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .rosco-photo-layer.rosco-photo-layer-full span {
+    font-size: clamp(150px, 16vw, 260px);
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .rosco-letter {
+    z-index: 4;
+  }
+
+  .rosco-center {
+    z-index: 5;
+    background: transparent;
+  }
+
+  /* Los cuatro participantes quedan debajo del panel de respuesta, en el orden de la maqueta. */
+  .game-side-right .score-side-all {
+    display: grid;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 10px;
+    min-height: 0;
+  }
+
+  .game-side-right .score-side-all .score-card {
+    min-height: 0;
+    height: auto;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game-side-right .score-side-all {
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .game-side-right .score-side-all .score-card {
+    min-height: 46px;
+    padding: 3px 6px;
+  }
+
+  .game-side-right .score-side-all .score-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .game-side-right .score-side-all .score-values span {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* ===== V2.0 — Ajuste 100% + composición inspirada en la maqueta ===== */
+@media (min-width: 1101px) {
+  /* Pantalla de configuración: todo visible al 100% sin depender del scroll. */
+  .setup {
+    padding: 8px 24px 10px;
+  }
+
+  .setup .header {
+    margin-bottom: 10px;
+  }
+
+  .setup .brand {
+    font-size: clamp(38px, 4vw, 58px);
+  }
+
+  .setup .tagline {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .setup .player-grid {
+    gap: 14px;
+    margin: 10px auto 10px;
+    max-width: 1280px;
+  }
+
+  .setup .player-card {
+    padding: 9px 10px 9px;
+    border-radius: 16px;
+  }
+
+  .setup .avatar-wrap {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 9px;
+  }
+
+  .setup .avatar-placeholder,
+  .setup .avatar-image {
+    width: 92px;
+    height: 92px;
+  }
+
+  .setup .avatar-placeholder {
+    font-size: 44px;
+  }
+
+  .setup .player-number {
+    width: 34px;
+    height: 34px;
+    bottom: -5px;
+    font-size: 20px;
+  }
+
+  .setup .name-input {
+    padding: 7px 9px;
+    font-size: 15px;
+  }
+
+  .setup .photo-button {
+    margin-top: 6px;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .setup .setup-controls {
+    max-width: 920px;
+  }
+
+  .setup .time-control {
+    padding: 9px 18px;
+    gap: 11px;
+    border-radius: 15px;
+  }
+
+  .setup .time-control svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .setup .number-input input {
+    width: 88px;
+    font-size: 21px;
+  }
+
+  .setup .number-input button {
+    width: 34px;
+  }
+
+  .setup .question-bank-control {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 14px;
+  }
+
+  .setup .question-bank-title {
+    font-size: 15px;
+  }
+
+  .setup .question-bank-actions {
+    gap: 7px;
+    margin-top: 7px;
+  }
+
+  .setup .question-bank-actions > * {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .setup .question-bank-status {
+    margin-top: 7px;
+    font-size: 11px;
+  }
+
+  .setup .start-button {
+    width: 76%;
+    margin-top: 10px;
+    padding: 11px;
+    font-size: 19px;
+  }
+
+  /* Maqueta de juego: logo arriba a la izquierda, rosco protagonista al centro,
+     panel de respuesta arriba a la derecha y participantes debajo. */
+  .game {
+    grid-template-columns: 300px minmax(0, 1fr) 300px;
+    grid-template-rows: 145px minmax(0, 1fr) auto 32px;
+    gap: 7px 18px;
+    padding: 5px 12px 7px;
+  }
+
+  .game .header.compact {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .game-logo {
+    width: min(500px, 100%);
+    max-height: 132px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .game-side-left {
+    grid-column: 1;
+    grid-row: 2;
+    padding-top: 4px;
+  }
+
+  .game-side-right {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    padding-top: 4px;
+  }
+
+  .game-main {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    min-height: 0;
+  }
+
+  .host-panel {
+    padding: 12px;
+  }
+
+  .panel-title {
+    text-align: center;
+  }
+
+  .game-side-right .wrong-feedback {
+    margin-top: 4px;
+  }
+
+  .rosco {
+    width: min(690px, 76vh, 100%);
+    max-width: 690px;
+  }
+
+  .rosco-letter {
+    width: 62px;
+    height: 62px;
+    font-size: 23px;
+  }
+
+  /* La foto queda estrictamente dentro del borde interior de las letras. */
+  .rosco-photo-layer.rosco-photo-layer-full {
+    inset: 12%;
+    width: 76%;
+    height: 76%;
+    border-radius: 50%;
+    opacity: .50;
+  }
+
+  .rosco-center {
+    inset: 21%;
+  }
+
+  .question-card {
+    grid-column: 2;
+    grid-row: 3;
+    width: min(960px, 100%);
+    margin: 0 auto;
+    padding: 10px 14px;
+  }
+
+  .question {
+    font-size: clamp(21px, 1.55vw, 27px);
+  }
+
+  .game-side-right .score-side-all {
+    margin-top: 10px;
+    gap: 6px;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 900px) {
+  .game {
+    grid-template-rows: 118px minmax(0, 1fr) auto 28px;
+  }
+
+  .game-logo {
+    width: min(440px, 100%);
+    max-height: 108px;
+  }
+
+  .rosco {
+    width: min(610px, 70vh, 100%);
+  }
+
+  .rosco-letter {
+    width: 56px;
+    height: 56px;
+    font-size: 21px;
+  }
+
+  .question-card {
+    padding: 8px 12px;
+  }
+
+  .question {
+    font-size: 20px;
+    margin: 4px 0 7px;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .setup .player-grid { margin-top: 6px; }
+  .setup .player-card { padding: 7px 8px; }
+  .setup .avatar-wrap { width: 92px; height: 92px; }
+  .setup .avatar-placeholder, .setup .avatar-image { width: 76px; height: 76px; }
+  .setup .photo-button { padding: 6px; font-size: 11px; }
+  .setup .question-bank-control { padding: 8px 11px; }
+  .setup .start-button { padding: 9px; font-size: 17px; }
+
+  .game {
+    grid-template-rows: 100px minmax(0, 1fr) auto 25px;
+    gap: 4px 14px;
+  }
+
+  .game-logo {
+    width: min(390px, 100%);
+    max-height: 92px;
+  }
+
+  .rosco {
+    width: min(560px, 67vh, 100%);
+  }
+
+  .rosco-letter {
+    width: 50px;
+    height: 50px;
+    font-size: 19px;
+  }
+
+  .rosco-photo-layer.rosco-photo-layer-full {
+    inset: 12%;
+    width: 76%;
+    height: 76%;
+  }
+}
+
+/* ===== V2.1 — Ajuste final de mesa + tarjeta de pregunta limpia ===== */
+@media (min-width: 1101px) {
+  /* La configuración debe entrar completa en pantalla al 100%. */
+  .setup {
+    padding: 6px 22px 8px;
+    overflow: hidden;
+  }
+  .setup .header {
+    margin-bottom: 5px;
+  }
+  .setup .brand {
+    font-size: clamp(34px, 3.4vw, 50px);
+  }
+  .setup .tagline {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+  .setup .player-grid {
+    gap: 12px;
+    margin: 6px auto 8px;
+    max-width: 1260px;
+  }
+  .setup .player-card {
+    padding: 7px 8px;
+    border-radius: 15px;
+  }
+  .setup .avatar-wrap {
+    width: 92px;
+    height: 92px;
+    margin-bottom: 6px;
+  }
+  .setup .avatar-placeholder,
+  .setup .avatar-image {
+    width: 76px;
+    height: 76px;
+  }
+  .setup .avatar-placeholder { font-size: 36px; }
+  .setup .player-number {
+    width: 30px;
+    height: 30px;
+    bottom: -4px;
+    font-size: 17px;
+  }
+  .setup .name-input {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  .setup .photo-button {
+    margin-top: 5px;
+    padding: 7px;
+    font-size: 11px;
+  }
+  .setup .setup-controls { max-width: 900px; }
+  .setup .time-control {
+    padding: 8px 16px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+  .setup .time-control svg { width: 25px; height: 25px; }
+  .setup .number-input input { width: 82px; font-size: 20px; }
+  .setup .number-input button { width: 32px; }
+  .setup .question-bank-control {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: 13px;
+  }
+  .setup .question-bank-title { font-size: 14px; }
+  .setup .question-bank-actions { gap: 6px; margin-top: 6px; }
+  .setup .question-bank-actions > * { padding: 6px 9px; font-size: 10px; }
+  .setup .question-bank-status { margin-top: 5px; font-size: 10px; }
+  .setup .start-button {
+    width: 70%;
+    margin-top: 8px;
+    padding: 9px;
+    font-size: 17px;
+  }
+
+  /* Mesa: logo arriba izquierda, host debajo; rosco protagonista al centro;
+     respuesta y los cuatro participantes en columna a la derecha. */
+  .game {
+    grid-template-columns: 300px minmax(0, 1fr) 300px;
+    grid-template-rows: 145px minmax(0, 1fr) auto 30px;
+    gap: 6px 18px;
+    padding: 5px 12px 7px;
+  }
+
+  .game .header.compact {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .game-logo {
+    width: min(500px, 100%);
+    max-height: 132px;
+    object-position: left center;
+  }
+
+  .game-side-left {
+    grid-column: 1;
+    grid-row: 2;
+    padding-top: 5px;
+  }
+  .game-side-right {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    padding-top: 5px;
+  }
+  .panel-title {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .game-main {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-items: center;
+    justify-content: center;
+  }
+  .rosco {
+    width: min(700px, 77vh, 100%);
+    max-width: 700px;
+  }
+  .rosco-letter {
+    width: 62px;
+    height: 62px;
+    font-size: 23px;
+  }
+
+  /* La foto ocupa todo el círculo interior, pero nunca cruza el anillo de letras. */
+  .rosco-photo-layer.rosco-photo-layer-full {
+    inset: 9.5%;
+    width: 81%;
+    height: 81%;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: .50;
+  }
+
+  .rosco-center {
+    inset: 21%;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* Tarjeta de pregunta: solamente consigna + categoría, sin input ni botones. */
+  .question-card {
+    grid-column: 2;
+    grid-row: 3;
+    width: min(980px, 100%);
+    margin: 0 auto;
+    padding: 10px 18px 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    min-height: 112px;
+  }
+  .question-card .question {
+    margin: 0;
+    font-size: clamp(20px, 1.75vw, 29px);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .question-card .question > span {
+    display: block;
+    margin: 0 0 5px;
+    color: #ff5bda;
+    font-size: clamp(24px, 2vw, 34px);
+    font-weight: 950;
+  }
+  .question-card .question-text {
+    display: block;
+    color: #f7f9ff;
+    font-weight: 500;
+  }
+  .question-card .question-category {
+    order: 3;
+    align-self: center;
+    margin-top: 9px;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+  .question-card .answer-row { display: none !important; }
+
+  .game-side-right .wrong-feedback { margin-top: 4px; }
+  .game-side-right .score-side-all {
+    margin-top: 10px;
+    gap: 6px;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 900px) {
+  .setup .brand { font-size: 34px; }
+  .setup .tagline { font-size: 12px; }
+  .setup .player-grid { margin-top: 4px; margin-bottom: 6px; }
+  .setup .avatar-wrap { width: 78px; height: 78px; }
+  .setup .avatar-placeholder, .setup .avatar-image { width: 64px; height: 64px; }
+  .setup .photo-button { padding: 5px; }
+  .setup .question-bank-control { padding: 7px 10px; }
+  .setup .start-button { padding: 8px; font-size: 16px; }
+
+  .game {
+    grid-template-rows: 120px minmax(0, 1fr) auto 27px;
+  }
+  .game-logo { max-height: 108px; width: min(430px, 100%); }
+  .rosco { width: min(620px, 70vh, 100%); }
+  .rosco-letter { width: 56px; height: 56px; font-size: 21px; }
+  .rosco-photo-layer.rosco-photo-layer-full { inset: 10%; width: 80%; height: 80%; }
+  .question-card { min-height: 98px; padding: 8px 14px 7px; }
+  .question-card .question { font-size: 20px; }
+  .question-card .question > span { font-size: 25px; }
+  .question-card .question-category { margin-top: 6px; }
+}
+
+/* V2.2 — distribución definitiva al 100%: logo + participantes a la izquierda,
+   controles/respuesta a la derecha y rosco protagonista al centro. */
+.game {
+  width: min(1600px, 100vw);
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 8px 18px 8px;
+  display: grid;
+  grid-template-columns: 350px minmax(560px, 1fr) 330px;
+  grid-template-rows: 145px minmax(0, 1fr) 112px 30px;
+  gap: 8px 18px;
+  overflow: hidden;
+}
+
+.game-brand {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.game-brand .header.compact {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.game-brand .game-logo {
+  width: 100%;
+  max-width: 350px;
+  max-height: 142px;
+  object-fit: contain;
+  object-position: left top;
+}
+
+.game-side-left {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.score-side-left-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+}
+
+.game-side-right {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+}
+.game-side-right .host-panel {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 0;
+}
+.game-side-right .panel-title {
+  text-align: center;
+  justify-content: center;
+}
+.game-side-right .wrong-feedback {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.game-main {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.rosco {
+  width: min(680px, 78vh, 100%);
+  max-width: 680px;
+  flex: 0 0 auto;
+}
+.rosco-letter {
+  width: 60px;
+  height: 60px;
+  font-size: 22px;
+}
+.rosco-photo-layer.rosco-photo-layer-full {
+  inset: 12%;
+  width: 76%;
+  height: 76%;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: .50;
+  z-index: 0;
+}
+.rosco-photo-layer.rosco-photo-layer-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rosco-center { z-index: 3; }
+
+.question-card {
+  grid-column: 2;
+  grid-row: 3;
+  width: min(980px, 100%);
+  min-height: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 9px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.question-card .question {
+  margin: 0;
+  font-size: clamp(20px, 1.65vw, 27px);
+  line-height: 1.16;
+}
+.question-card .question > span {
+  display: inline;
+  margin-right: 7px;
+  font-size: clamp(22px, 1.85vw, 31px);
+}
+.question-card .question-text { display: inline; }
+.question-card .question-category {
+  align-self: center;
+  margin-top: 5px;
+}
+.question-card .answer-row { display: none !important; }
+
+.game-actions {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  margin: 0;
+  text-align: center;
+}
+
+.game-side-left .score-card {
+  min-height: 0;
+  padding: 8px 10px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 8px;
+  align-items: center;
+  text-align: left;
+}
+.game-side-left .score-avatar {
+  width: 44px;
+  height: 44px;
+  grid-row: 1 / span 2;
+}
+.game-side-left .score-card strong {
+  margin: 0 0 3px;
+  font-size: 14px;
+}
+.game-side-left .score-values {
+  justify-content: flex-start;
+  gap: 7px;
+}
+.game-side-left .score-values span {
+  width: 48px;
+  height: 48px;
+}
+.game-side-left .score-values b { font-size: 16px; }
+.game-side-left .score-values small { font-size: 6px; }
+
+@media (max-height: 820px) and (min-width: 1101px) {
+  .game {
+    grid-template-columns: 330px minmax(520px, 1fr) 310px;
+    grid-template-rows: 122px minmax(0, 1fr) 98px 27px;
+    gap: 6px 14px;
+    padding: 5px 12px 5px;
+  }
+  .game-brand .game-logo { max-height: 118px; }
+  .rosco { width: min(610px, 70vh, 100%); }
+  .rosco-letter { width: 54px; height: 54px; font-size: 20px; }
+  .game-side-right .host-panel { padding: 9px; }
+  .game-side-left .score-card { padding: 6px 8px; }
+  .game-side-left .score-avatar { width: 38px; height: 38px; }
+  .game-side-left .score-values span { width: 42px; height: 42px; }
+  .question-card .question { font-size: 18px; }
+  .question-card .question > span { font-size: 21px; }
+}
+
+/* ===== V2.3 — panel derecho compacto + encabezado de pregunta centrado ===== */
+.game {
+  grid-template-columns: 350px minmax(560px, 1fr) 300px;
+}
+
+.game-side-right {
+  padding-top: 18px;
+  gap: 7px;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.game-side-right .host-panel {
+  width: 100%;
+  max-height: 292px;
+  padding: 9px 10px;
+  overflow: hidden;
+}
+
+.game-side-right .panel-title {
+  font-size: 12px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.game-side-right .active-player-badge {
+  font-size: 8px;
+  padding: 4px 6px;
+  margin-bottom: 5px;
+}
+
+.game-side-right .recognized-label {
+  font-size: 7px;
+  margin-bottom: 4px;
+}
+
+.game-side-right .recognized-text {
+  min-height: 48px;
+  max-height: 58px;
+  padding: 7px 9px;
+  font-size: 11px;
+  line-height: 1.25;
+  overflow: auto;
+}
+
+.game-side-right .mic-button {
+  min-height: 42px;
+  padding: 7px 9px;
+  margin-top: 7px;
+  font-size: 11px;
+}
+
+.game-side-right .check-row {
+  font-size: 10px;
+  margin-top: 6px;
+}
+
+.game-side-right .voice-status {
+  font-size: 7px;
+  line-height: 1.15;
+  padding: 5px 7px;
+  margin-top: 6px;
+  max-height: 26px;
+  overflow: hidden;
+}
+
+.game-side-right .wrong-feedback {
+  width: 100%;
+  max-height: 300px;
+  min-height: 0;
+  padding: 12px 11px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.game-side-right .wrong-feedback-title {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.game-side-right .wrong-feedback-letter {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.game-side-right .wrong-feedback-label {
+  font-size: 10px;
+  margin: 5px 0;
+}
+
+.game-side-right .wrong-feedback-spoken,
+.game-side-right .wrong-feedback-answer {
+  font-size: clamp(14px, 1.15vw, 18px);
+  line-height: 1.12;
+  max-height: 62px;
+  overflow: auto;
+  word-break: break-word;
+}
+
+.game-side-right .wrong-feedback-note {
+  font-size: 9px;
+  margin: 7px 0;
+}
+
+.game-side-right .wrong-feedback button {
+  width: 100%;
+  min-height: 42px;
+  padding: 7px 9px;
+  font-size: 11px;
+  line-height: 1.15;
+}
+
+/* La cabecera "Empieza por/Contiene + letra" queda centrada y separada de la consigna. */
+.question-card .question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.question-card .question > span {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: clamp(23px, 1.9vw, 31px);
+  line-height: 1.05;
+  text-align: center;
+}
+
+.question-card .question-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(18px, 1.45vw, 24px);
+  line-height: 1.2;
+}
+
+.question-card .question-category {
+  align-self: center;
+  margin-top: 5px;
+}
+
+@media (max-height: 820px) and (min-width: 1101px) {
+  .game {
+    grid-template-columns: 330px minmax(520px, 1fr) 285px;
+    grid-template-rows: 122px minmax(0, 1fr) 98px 27px;
+  }
+
+  .game-side-right {
+    padding-top: 12px;
+    gap: 5px;
+  }
+
+  .game-side-right .host-panel {
+    max-height: 255px;
+    padding: 7px 8px;
+  }
+
+  .game-side-right .wrong-feedback {
+    max-height: 275px;
+    padding: 9px 8px;
+  }
+
+  .game-side-right .recognized-text {
+    min-height: 42px;
+    max-height: 50px;
+    font-size: 10px;
+  }
+
+  .game-side-right .mic-button {
+    min-height: 38px;
+    margin-top: 5px;
+  }
+}
+
+/* ===== V2.4 — Paneles derechos más bajos =====
+   Baja ambos paneles del lateral derecho sin modificar el rosco,
+   los participantes ni el recuadro de pregunta. */
+@media (min-width: 1101px) {
+  .game > .host-panel,
+  .game > .wrong-feedback {
+    transform: translateY(clamp(28px, 5vh, 55px));
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game > .host-panel,
+  .game > .wrong-feedback {
+    transform: translateY(32px);
+  }
+}
+
+/* ===== V2.5 — Ajuste final de paneles derechos + preguntas ===== */
+@media (min-width: 1101px) {
+  .game-side-right {
+    transform: translateY(52px);
+  }
+
+  .game-side-right .host-panel {
+    max-height: 255px;
+    padding: 8px 9px;
+  }
+
+  .game-side-right .wrong-feedback {
+    max-height: 270px;
+    padding: 10px 9px;
+  }
+
+  .game-side-right .recognized-text {
+    min-height: 42px;
+    max-height: 50px;
+  }
+
+  .game-side-right .mic-button {
+    min-height: 38px;
+    margin-top: 5px;
+  }
+
+  .game-side-right .wrong-feedback button {
+    min-height: 38px;
+    padding: 6px 8px;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .game-side-right {
+    transform: translateY(52px);
+  }
+
+  .game-side-right .host-panel {
+    max-height: 225px;
+  }
+
+  .game-side-right .wrong-feedback {
+    max-height: 245px;
+  }
+}

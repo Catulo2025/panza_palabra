@@ -1,0 +1,251 @@
+{
+  "preguntas": [
+    {
+      "letra": "A",
+      "tipo": "empieza",
+      "categoria": "Geografía",
+      "pregunta": "País de Sudamérica cuya capital es Buenos Aires.",
+      "respuestas": [
+        "Argentina"
+      ]
+    },
+    {
+      "letra": "B",
+      "tipo": "empieza",
+      "categoria": "Tecnología",
+      "pregunta": "Dispositivo que impulsa un líquido o un gas de un lugar a otro.",
+      "respuestas": [
+        "Bomba"
+      ]
+    },
+    {
+      "letra": "C",
+      "tipo": "empieza",
+      "categoria": "Música",
+      "pregunta": "Instrumento de cuerda que suele tener varias cuerdas y se toca con las manos.",
+      "respuestas": [
+        "Cítara",
+        "Citara"
+      ]
+    },
+    {
+      "letra": "D",
+      "tipo": "empieza",
+      "categoria": "Tecnología",
+      "pregunta": "Componente electrónico que permite el paso de corriente principalmente en una dirección.",
+      "respuestas": [
+        "Diodo"
+      ]
+    },
+    {
+      "letra": "E",
+      "tipo": "empieza",
+      "categoria": "Geografía",
+      "pregunta": "País europeo cuya capital es Madrid.",
+      "respuestas": [
+        "España",
+        "Espana"
+      ]
+    },
+    {
+      "letra": "F",
+      "tipo": "empieza",
+      "categoria": "Música",
+      "pregunta": "Instrumento de viento de la familia de las maderas que se toca soplando por un extremo.",
+      "respuestas": [
+        "Flauta"
+      ]
+    },
+    {
+      "letra": "G",
+      "tipo": "empieza",
+      "categoria": "Música",
+      "pregunta": "Instrumento musical de seis cuerdas muy utilizado en el rock.",
+      "respuestas": [
+        "Guitarra"
+      ]
+    },
+    {
+      "letra": "H",
+      "tipo": "empieza",
+      "categoria": "Gastronomía",
+      "pregunta": "Bebida tradicional preparada en algunos países con arroz, agua y azúcar.",
+      "respuestas": [
+        "Horchata"
+      ]
+    },
+    {
+      "letra": "I",
+      "tipo": "empieza",
+      "categoria": "Tecnología",
+      "pregunta": "Red mundial que conecta millones de computadoras.",
+      "respuestas": [
+        "Internet"
+      ]
+    },
+    {
+      "letra": "J",
+      "tipo": "empieza",
+      "categoria": "Deportes",
+      "pregunta": "Deporte japonés de combate que se practica sobre tatami.",
+      "respuestas": [
+        "Judo"
+      ]
+    },
+    {
+      "letra": "K",
+      "tipo": "empieza",
+      "categoria": "Tecnología",
+      "pregunta": "Unidad de información equivalente a mil bytes aproximadamente.",
+      "respuestas": [
+        "Kilobyte"
+      ]
+    },
+    {
+      "letra": "L",
+      "tipo": "empieza",
+      "categoria": "Astronomía",
+      "pregunta": "Satélite natural de la Tierra.",
+      "respuestas": [
+        "Luna"
+      ]
+    },
+    {
+      "letra": "M",
+      "tipo": "empieza",
+      "categoria": "Música",
+      "pregunta": "Dispositivo que convierte el sonido en una señal eléctrica para grabarlo o amplificarlo.",
+      "respuestas": [
+        "Micrófono",
+        "Microfono"
+      ]
+    },
+    {
+      "letra": "N",
+      "tipo": "empieza",
+      "categoria": "Anatomía",
+      "pregunta": "Parte de la cara utilizada para respirar y oler.",
+      "respuestas": [
+        "Nariz"
+      ]
+    },
+    {
+      "letra": "Ñ",
+      "tipo": "contiene",
+      "categoria": "Gastronomía",
+      "pregunta": "Fruta tropical cuya pulpa es amarilla y dulce y que contiene la letra Ñ.",
+      "respuestas": [
+        "Piña"
+      ]
+    },
+    {
+      "letra": "O",
+      "tipo": "empieza",
+      "categoria": "Química",
+      "pregunta": "Metal precioso de color amarillo.",
+      "respuestas": [
+        "Oro"
+      ]
+    },
+    {
+      "letra": "P",
+      "tipo": "empieza",
+      "categoria": "Cultura",
+      "pregunta": "Juego de palabras en el que se responde una pregunta para cada letra de un rosco.",
+      "respuestas": [
+        "Pasapalabra"
+      ]
+    },
+    {
+      "letra": "Q",
+      "tipo": "empieza",
+      "categoria": "Gastronomía",
+      "pregunta": "Alimento elaborado principalmente a partir de leche.",
+      "respuestas": [
+        "Queso"
+      ]
+    },
+    {
+      "letra": "R",
+      "tipo": "empieza",
+      "categoria": "Tecnología",
+      "pregunta": "Aparato que recibe y reproduce señales de radio.",
+      "respuestas": [
+        "Radio"
+      ]
+    },
+    {
+      "letra": "S",
+      "tipo": "empieza",
+      "categoria": "Astronomía",
+      "pregunta": "Estrella alrededor de la cual gira la Tierra.",
+      "respuestas": [
+        "Sol"
+      ]
+    },
+    {
+      "letra": "T",
+      "tipo": "empieza",
+      "categoria": "Música",
+      "pregunta": "Instrumento musical de cuerda con seis cuerdas que suele tener forma de pera.",
+      "respuestas": [
+        "Tiple"
+      ]
+    },
+    {
+      "letra": "U",
+      "tipo": "empieza",
+      "categoria": "Gastronomía",
+      "pregunta": "Fruta pequeña que suele crecer en racimos.",
+      "respuestas": [
+        "Uva"
+      ]
+    },
+    {
+      "letra": "V",
+      "tipo": "empieza",
+      "categoria": "Música",
+      "pregunta": "Instrumento de cuerda similar al violín, pero algo más grande.",
+      "respuestas": [
+        "Viola"
+      ]
+    },
+    {
+      "letra": "W",
+      "tipo": "empieza",
+      "categoria": "Tecnología",
+      "pregunta": "Sistema de páginas y recursos enlazados que funciona sobre Internet.",
+      "respuestas": [
+        "Web"
+      ]
+    },
+    {
+      "letra": "X",
+      "tipo": "empieza",
+      "categoria": "Música",
+      "pregunta": "Instrumento de percusión formado por láminas que se golpean con baquetas.",
+      "respuestas": [
+        "Xilófono",
+        "Xilofono"
+      ]
+    },
+    {
+      "letra": "Y",
+      "tipo": "empieza",
+      "categoria": "Ciencia",
+      "pregunta": "Elemento químico cuyo nombre comienza con Y y cuyo símbolo es I.",
+      "respuestas": [
+        "Yodo"
+      ]
+    },
+    {
+      "letra": "Z",
+      "tipo": "empieza",
+      "categoria": "Zoología",
+      "pregunta": "Mamífero de la familia de los cánidos, conocido por su astucia y por su cola peluda.",
+      "respuestas": [
+        "Zorro"
+      ]
+    }
+  ]
+}

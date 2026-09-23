@@ -1,0 +1,1004 @@
+{
+  "jugadores": [
+    {
+      "id": 1,
+      "nombre": "Jugador 1",
+      "preguntas": [
+        {
+          "letra": "A",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "Respuesta directa: País de Sudamérica cuya capital es Buenos Aires.",
+          "respuestas": [
+            "Argentina"
+          ]
+        },
+        {
+          "letra": "B",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Respuesta directa: Dispositivo que impulsa un líquido o un gas de un lugar a otro.",
+          "respuestas": [
+            "Bomba"
+          ]
+        },
+        {
+          "letra": "C",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Respuesta directa: Instrumento de cuerda que suele tener varias cuerdas y se toca con las manos.",
+          "respuestas": [
+            "Cítara",
+            "Citara"
+          ]
+        },
+        {
+          "letra": "D",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Respuesta directa: Componente electrónico que permite el paso de corriente principalmente en una dirección.",
+          "respuestas": [
+            "Diodo"
+          ]
+        },
+        {
+          "letra": "E",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "Respuesta directa: País europeo cuya capital es Madrid.",
+          "respuestas": [
+            "España",
+            "Espana"
+          ]
+        },
+        {
+          "letra": "F",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Respuesta directa: Instrumento de viento de la familia de las maderas que se toca soplando por un extremo.",
+          "respuestas": [
+            "Flauta"
+          ]
+        },
+        {
+          "letra": "G",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Respuesta directa: Instrumento musical de seis cuerdas muy utilizado en el rock.",
+          "respuestas": [
+            "Guitarra"
+          ]
+        },
+        {
+          "letra": "H",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Respuesta directa: Bebida tradicional preparada en algunos países con arroz, agua y azúcar.",
+          "respuestas": [
+            "Horchata"
+          ]
+        },
+        {
+          "letra": "I",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Respuesta directa: Red mundial que conecta millones de computadoras.",
+          "respuestas": [
+            "Internet"
+          ]
+        },
+        {
+          "letra": "J",
+          "tipo": "empieza",
+          "categoria": "Deportes",
+          "pregunta": "Respuesta directa: Deporte japonés de combate que se practica sobre tatami.",
+          "respuestas": [
+            "Judo"
+          ]
+        },
+        {
+          "letra": "K",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Respuesta directa: Unidad de información equivalente a mil bytes aproximadamente.",
+          "respuestas": [
+            "Kilobyte"
+          ]
+        },
+        {
+          "letra": "L",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "Respuesta directa: Satélite natural de la Tierra.",
+          "respuestas": [
+            "Luna"
+          ]
+        },
+        {
+          "letra": "M",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Respuesta directa: Dispositivo que convierte el sonido en una señal eléctrica para grabarlo o amplificarlo.",
+          "respuestas": [
+            "Micrófono",
+            "Microfono"
+          ]
+        },
+        {
+          "letra": "N",
+          "tipo": "empieza",
+          "categoria": "Anatomía",
+          "pregunta": "Respuesta directa: Parte de la cara utilizada para respirar y oler.",
+          "respuestas": [
+            "Nariz"
+          ]
+        },
+        {
+          "letra": "Ñ",
+          "tipo": "contiene",
+          "categoria": "Gastronomía",
+          "pregunta": "Respuesta directa: Fruta tropical cuya pulpa es amarilla y dulce y que contiene la letra Ñ.",
+          "respuestas": [
+            "Piña"
+          ]
+        },
+        {
+          "letra": "O",
+          "tipo": "empieza",
+          "categoria": "Química",
+          "pregunta": "Respuesta directa: Metal precioso de color amarillo.",
+          "respuestas": [
+            "Oro"
+          ]
+        },
+        {
+          "letra": "P",
+          "tipo": "empieza",
+          "categoria": "Cultura",
+          "pregunta": "Respuesta directa: Juego de palabras en el que se responde una pregunta para cada letra de un rosco.",
+          "respuestas": [
+            "Pasapalabra"
+          ]
+        },
+        {
+          "letra": "Q",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Respuesta directa: Alimento elaborado principalmente a partir de leche.",
+          "respuestas": [
+            "Queso"
+          ]
+        },
+        {
+          "letra": "R",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Respuesta directa: Aparato que recibe y reproduce señales de radio.",
+          "respuestas": [
+            "Radio"
+          ]
+        },
+        {
+          "letra": "S",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "Respuesta directa: Estrella alrededor de la cual gira la Tierra.",
+          "respuestas": [
+            "Sol"
+          ]
+        },
+        {
+          "letra": "T",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Respuesta directa: Instrumento musical de cuerda con seis cuerdas que suele tener forma de pera.",
+          "respuestas": [
+            "Tiple"
+          ]
+        },
+        {
+          "letra": "U",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Respuesta directa: Fruta pequeña que suele crecer en racimos.",
+          "respuestas": [
+            "Uva"
+          ]
+        },
+        {
+          "letra": "V",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Respuesta directa: Instrumento de cuerda similar al violín, pero algo más grande.",
+          "respuestas": [
+            "Viola"
+          ]
+        },
+        {
+          "letra": "W",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Respuesta directa: Sistema de páginas y recursos enlazados que funciona sobre Internet.",
+          "respuestas": [
+            "Web"
+          ]
+        },
+        {
+          "letra": "X",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Respuesta directa: Instrumento de percusión formado por láminas que se golpean con baquetas.",
+          "respuestas": [
+            "Xilófono",
+            "Xilofono"
+          ]
+        },
+        {
+          "letra": "Y",
+          "tipo": "empieza",
+          "categoria": "Ciencia",
+          "pregunta": "Respuesta directa: Elemento químico cuyo nombre comienza con Y y cuyo símbolo es I.",
+          "respuestas": [
+            "Yodo"
+          ]
+        },
+        {
+          "letra": "Z",
+          "tipo": "empieza",
+          "categoria": "Zoología",
+          "pregunta": "Respuesta directa: Mamífero de la familia de los cánidos, conocido por su astucia y por su cola peluda.",
+          "respuestas": [
+            "Zorro"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Jugador 2",
+      "preguntas": [
+        {
+          "letra": "A",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "País de Oceanía cuya capital es Canberra.",
+          "respuestas": [
+            "Australia"
+          ]
+        },
+        {
+          "letra": "B",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Compositor alemán de la Novena Sinfonía.",
+          "respuestas": [
+            "Beethoven"
+          ]
+        },
+        {
+          "letra": "C",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "País norteamericano cuya capital es Ottawa.",
+          "respuestas": [
+            "Canadá"
+          ]
+        },
+        {
+          "letra": "D",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Mamífero marino conocido por su inteligencia.",
+          "respuestas": [
+            "Delfín"
+          ]
+        },
+        {
+          "letra": "E",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "Físico asociado con la teoría de la relatividad.",
+          "respuestas": [
+            "Einstein"
+          ]
+        },
+        {
+          "letra": "F",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Deporte que se juega con una pelota y dos arcos.",
+          "respuestas": [
+            "Fútbol"
+          ]
+        },
+        {
+          "letra": "G",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "País europeo famoso por su historia clásica.",
+          "respuestas": [
+            "Grecia"
+          ]
+        },
+        {
+          "letra": "H",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "País europeo cuya capital es Budapest.",
+          "respuestas": [
+            "Hungría"
+          ]
+        },
+        {
+          "letra": "I",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Reptil de zonas tropicales.",
+          "respuestas": [
+            "Iguana"
+          ]
+        },
+        {
+          "letra": "J",
+          "tipo": "empieza",
+          "categoria": "Deportes",
+          "pregunta": "País asiático cuya capital es Tokio.",
+          "respuestas": [
+            "Japón"
+          ]
+        },
+        {
+          "letra": "K",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Arte marcial de origen japonés.",
+          "respuestas": [
+            "Karate"
+          ]
+        },
+        {
+          "letra": "L",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "Capital de Portugal.",
+          "respuestas": [
+            "Lisboa"
+          ]
+        },
+        {
+          "letra": "M",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Planeta rojo.",
+          "respuestas": [
+            "Marte"
+          ]
+        },
+        {
+          "letra": "N",
+          "tipo": "empieza",
+          "categoria": "Anatomía",
+          "pregunta": "País escandinavo cuya capital es Oslo.",
+          "respuestas": [
+            "Noruega"
+          ]
+        },
+        {
+          "letra": "Ñ",
+          "tipo": "contiene",
+          "categoria": "Gastronomía",
+          "pregunta": "Mamífero cuyo nombre contiene Ñ.",
+          "respuestas": [
+            "Armiño"
+          ]
+        },
+        {
+          "letra": "O",
+          "tipo": "empieza",
+          "categoria": "Química",
+          "pregunta": "Capital de Noruega.",
+          "respuestas": [
+            "Oslo"
+          ]
+        },
+        {
+          "letra": "P",
+          "tipo": "empieza",
+          "categoria": "Cultura",
+          "pregunta": "País sudamericano cuya capital es Lima.",
+          "respuestas": [
+            "Perú"
+          ]
+        },
+        {
+          "letra": "Q",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "País de Oriente Medio.",
+          "respuestas": [
+            "Qatar"
+          ]
+        },
+        {
+          "letra": "R",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "País más extenso del mundo.",
+          "respuestas": [
+            "Rusia"
+          ]
+        },
+        {
+          "letra": "S",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "País escandinavo cuya capital es Estocolmo.",
+          "respuestas": [
+            "Suecia"
+          ]
+        },
+        {
+          "letra": "T",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "País cuya capital es Ankara.",
+          "respuestas": [
+            "Turquía"
+          ]
+        },
+        {
+          "letra": "U",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Fruto que crece en racimos.",
+          "respuestas": [
+            "Uva"
+          ]
+        },
+        {
+          "letra": "V",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "País sudamericano cuya capital es Caracas.",
+          "respuestas": [
+            "Venezuela"
+          ]
+        },
+        {
+          "letra": "W",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Unidad de potencia.",
+          "respuestas": [
+            "Watt"
+          ]
+        },
+        {
+          "letra": "X",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Técnica de grabado en madera.",
+          "respuestas": [
+            "Xilografía"
+          ]
+        },
+        {
+          "letra": "Y",
+          "tipo": "empieza",
+          "categoria": "Ciencia",
+          "pregunta": "Alimento lácteo fermentado.",
+          "respuestas": [
+            "Yogur"
+          ]
+        },
+        {
+          "letra": "Z",
+          "tipo": "empieza",
+          "categoria": "Zoología",
+          "pregunta": "Ciudad española del Pilar.",
+          "respuestas": [
+            "Zaragoza"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Jugador 3",
+      "preguntas": [
+        {
+          "letra": "A",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "País europeo cuya capital es Viena.",
+          "respuestas": [
+            "Austria"
+          ]
+        },
+        {
+          "letra": "B",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "País sudamericano cuya capital constitucional es Sucre.",
+          "respuestas": [
+            "Bolivia"
+          ]
+        },
+        {
+          "letra": "C",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Mamífero marsupial australiano.",
+          "respuestas": [
+            "Canguro"
+          ]
+        },
+        {
+          "letra": "D",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Autor de la Divina comedia.",
+          "respuestas": [
+            "Dante"
+          ]
+        },
+        {
+          "letra": "E",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "País sudamericano cuya capital es Quito.",
+          "respuestas": [
+            "Ecuador"
+          ]
+        },
+        {
+          "letra": "F",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Matemático asociado a una célebre sucesión.",
+          "respuestas": [
+            "Fibonacci"
+          ]
+        },
+        {
+          "letra": "G",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Astrónomo italiano defensor del heliocentrismo.",
+          "respuestas": [
+            "Galileo"
+          ]
+        },
+        {
+          "letra": "H",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Ciudad japonesa atacada con una bomba atómica en 1945.",
+          "respuestas": [
+            "Hiroshima"
+          ]
+        },
+        {
+          "letra": "I",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Objeto que atrae materiales ferromagnéticos.",
+          "respuestas": [
+            "Imán"
+          ]
+        },
+        {
+          "letra": "J",
+          "tipo": "empieza",
+          "categoria": "Deportes",
+          "pregunta": "Político romano asesinado en los idus de marzo.",
+          "respuestas": [
+            "Julio César"
+          ]
+        },
+        {
+          "letra": "K",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Unidad equivalente a mil metros.",
+          "respuestas": [
+            "Kilómetro"
+          ]
+        },
+        {
+          "letra": "L",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "Gran felino conocido como rey de la selva.",
+          "respuestas": [
+            "León"
+          ]
+        },
+        {
+          "letra": "M",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Compositor austríaco.",
+          "respuestas": [
+            "Mozart"
+          ]
+        },
+        {
+          "letra": "N",
+          "tipo": "empieza",
+          "categoria": "Anatomía",
+          "pregunta": "Físico inglés asociado a las leyes del movimiento.",
+          "respuestas": [
+            "Newton"
+          ]
+        },
+        {
+          "letra": "Ñ",
+          "tipo": "contiene",
+          "categoria": "Gastronomía",
+          "pregunta": "Fruto seco cuyo nombre contiene Ñ.",
+          "respuestas": [
+            "Castaña"
+          ]
+        },
+        {
+          "letra": "O",
+          "tipo": "empieza",
+          "categoria": "Química",
+          "pregunta": "Gas necesario para la respiración.",
+          "respuestas": [
+            "Oxígeno"
+          ]
+        },
+        {
+          "letra": "P",
+          "tipo": "empieza",
+          "categoria": "Cultura",
+          "pregunta": "Pintor español del Guernica.",
+          "respuestas": [
+            "Picasso"
+          ]
+        },
+        {
+          "letra": "Q",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Novela de Cervantes.",
+          "respuestas": [
+            "Quijote"
+          ]
+        },
+        {
+          "letra": "R",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Piedra preciosa roja.",
+          "respuestas": [
+            "Rubí"
+          ]
+        },
+        {
+          "letra": "S",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "Planeta con anillos visibles.",
+          "respuestas": [
+            "Saturno"
+          ]
+        },
+        {
+          "letra": "T",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Inventor asociado con la corriente alterna.",
+          "respuestas": [
+            "Tesla"
+          ]
+        },
+        {
+          "letra": "U",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Héroe de la Odisea.",
+          "respuestas": [
+            "Ulises"
+          ]
+        },
+        {
+          "letra": "V",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Segundo planeta desde el Sol.",
+          "respuestas": [
+            "Venus"
+          ]
+        },
+        {
+          "letra": "W",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Capital federal de Estados Unidos.",
+          "respuestas": [
+            "Washington"
+          ]
+        },
+        {
+          "letra": "X",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Perro mexicano sin pelo.",
+          "respuestas": [
+            "Xoloitzcuintle"
+          ]
+        },
+        {
+          "letra": "Y",
+          "tipo": "empieza",
+          "categoria": "Ciencia",
+          "pregunta": "Disciplina física y mental originaria de la India.",
+          "respuestas": [
+            "Yoga"
+          ]
+        },
+        {
+          "letra": "Z",
+          "tipo": "empieza",
+          "categoria": "Zoología",
+          "pregunta": "Elemento químico de número atómico 30.",
+          "respuestas": [
+            "Zinc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Jugador 4",
+      "preguntas": [
+        {
+          "letra": "A",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "Rey macedonio que conquistó gran parte del mundo antiguo.",
+          "respuestas": [
+            "Alejandro"
+          ]
+        },
+        {
+          "letra": "B",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Unidad básica de los seres vivos.",
+          "respuestas": [
+            "Biocélula"
+          ]
+        },
+        {
+          "letra": "C",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Variedad de melón de pulpa anaranjada.",
+          "respuestas": [
+            "Cantalupo"
+          ]
+        },
+        {
+          "letra": "D",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Medio magnético usado antiguamente para almacenar archivos.",
+          "respuestas": [
+            "Disquete"
+          ]
+        },
+        {
+          "letra": "E",
+          "tipo": "empieza",
+          "categoria": "Geografía",
+          "pregunta": "Instrumento de viento de metal.",
+          "respuestas": [
+            "Eufonio"
+          ]
+        },
+        {
+          "letra": "F",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Gobernante del antiguo Egipto.",
+          "respuestas": [
+            "Faraón"
+          ]
+        },
+        {
+          "letra": "G",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Pasta italiana pequeña y redondeada.",
+          "respuestas": [
+            "Gnocchi"
+          ]
+        },
+        {
+          "letra": "H",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Ser humano adulto de sexo masculino.",
+          "respuestas": [
+            "Hombre"
+          ]
+        },
+        {
+          "letra": "I",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Dispositivo que produce copias físicas de documentos.",
+          "respuestas": [
+            "Impresora"
+          ]
+        },
+        {
+          "letra": "J",
+          "tipo": "empieza",
+          "categoria": "Deportes",
+          "pregunta": "País de Oriente Medio cuya capital es Amán.",
+          "respuestas": [
+            "Jordania"
+          ]
+        },
+        {
+          "letra": "K",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Unidad de temperatura absoluta.",
+          "respuestas": [
+            "Kelvin"
+          ]
+        },
+        {
+          "letra": "L",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "Nombre del protagonista de Los viajes de Gulliver.",
+          "respuestas": [
+            "Lemuel"
+          ]
+        },
+        {
+          "letra": "M",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Civilización mesoamericana.",
+          "respuestas": [
+            "Maya"
+          ]
+        },
+        {
+          "letra": "N",
+          "tipo": "empieza",
+          "categoria": "Anatomía",
+          "pregunta": "Mamífero marino con un largo colmillo.",
+          "respuestas": [
+            "Narval"
+          ]
+        },
+        {
+          "letra": "Ñ",
+          "tipo": "contiene",
+          "categoria": "Gastronomía",
+          "pregunta": "Mamífero de pelaje fino cuyo nombre contiene Ñ.",
+          "respuestas": [
+            "Armiño"
+          ]
+        },
+        {
+          "letra": "O",
+          "tipo": "empieza",
+          "categoria": "Química",
+          "pregunta": "Técnica pictórica que usa aceite como aglutinante.",
+          "respuestas": [
+            "Óleo"
+          ]
+        },
+        {
+          "letra": "P",
+          "tipo": "empieza",
+          "categoria": "Cultura",
+          "pregunta": "Árbol de hoja perenne.",
+          "respuestas": [
+            "Pino"
+          ]
+        },
+        {
+          "letra": "Q",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Dinastía china que dio nombre al país.",
+          "respuestas": [
+            "Qin"
+          ]
+        },
+        {
+          "letra": "R",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Capital de Italia.",
+          "respuestas": [
+            "Roma"
+          ]
+        },
+        {
+          "letra": "S",
+          "tipo": "empieza",
+          "categoria": "Astronomía",
+          "pregunta": "Disciplina acuática realizada desde un trampolín o plataforma.",
+          "respuestas": [
+            "Salto"
+          ]
+        },
+        {
+          "letra": "T",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Instrumento de percusión.",
+          "respuestas": [
+            "Tambor"
+          ]
+        },
+        {
+          "letra": "U",
+          "tipo": "empieza",
+          "categoria": "Gastronomía",
+          "pregunta": "Formato de codificación de caracteres Unicode.",
+          "respuestas": [
+            "UTF-8"
+          ]
+        },
+        {
+          "letra": "V",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Cambio de estado de líquido a gas.",
+          "respuestas": [
+            "Vaporización"
+          ]
+        },
+        {
+          "letra": "W",
+          "tipo": "empieza",
+          "categoria": "Tecnología",
+          "pregunta": "Sistema mundial de páginas enlazadas.",
+          "respuestas": [
+            "Web"
+          ]
+        },
+        {
+          "letra": "X",
+          "tipo": "empieza",
+          "categoria": "Música",
+          "pregunta": "Gas noble de símbolo Xe.",
+          "respuestas": [
+            "Xenón"
+          ]
+        },
+        {
+          "letra": "Y",
+          "tipo": "empieza",
+          "categoria": "Ciencia",
+          "pregunta": "Alimento lácteo fermentado.",
+          "respuestas": [
+            "Yogur"
+          ]
+        },
+        {
+          "letra": "Z",
+          "tipo": "empieza",
+          "categoria": "Zoología",
+          "pregunta": "País africano cuya capital es Harare.",
+          "respuestas": [
+            "Zimbabue"
+          ]
+        }
+      ]
+    }
+  ]
+}
